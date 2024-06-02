@@ -1,24 +1,25 @@
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
 
-pragma solidity ^0.8.7;
-
-contract hell{
-    uint a;
-    uint b;
-    uint c;
-    uint d;
-
-
-    function set(uint _a,uint _b,uint _c,uint _d) public {
-        a=_a;
-        b=_b;
-        c=_c;
-        d=_d;
+contract hello{
+    function loop1() external pure returns(uint c){
+        for(uint i=0;i<1000;i++){
+            c+=i;
+        }
+        return c;
     }
 
-    function get() view public returns (uint f){
-        return a+b+c+d;
-    }
+    function loop2C() external pure returns(uint d){
+        uint j=0;
 
+        while(j<=150){
+            if(j%2==0){
+                d+=j+(j*2);
+            }
+            else {
+                d+=j+(j*3);
+            }
+            return d;
+        }
+    }
 }
-
