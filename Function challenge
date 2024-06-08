@@ -1,21 +1,17 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
 
-contract hello{
-    function add(uint a, uint b) external pure returns(uint c){
-        return a+b; 
+pragma solidity ^0.8.13;
+
+contract storagememory{
+    struct put{
+        string name;
+        uint id;
     }
 
-    function sub(uint a, uint b) external pure returns(uint c){
-        return a-b; 
+    put a;
+    function putdet(string memory _name, uint _uid ) public returns(string memory, uint){
+        a.name =_name;
+        a.id =_uid;
+        return (a.name,a.id);
     }
-
-    function mult(uint a, uint b) external pure returns(uint c){
-        return a*b; 
-    }
-
-    function div(uint a, uint b) external pure returns(uint c){
-        return a/b; 
-    }
-
 }
